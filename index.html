@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OrchiServe CX - Agentic Customer Service Automation</title>
+  <!-- <script src="/_sdk/element_sdk.js"></script> -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- <script src="/_sdk/data_sdk.js" type="text/javascript"></script> -->
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        OrchiServe CX
+        <span class="logo-tagline">
+          • Powered by IBM watsonx
+        </span>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#stack">Tech Stack</a></li>
+        <li><a href="#demo">Live Demo</a></li>
+        <li><a href="#testimonials">Impact</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <button class="nav-cta" onclick="document.getElementById('demo').scrollIntoView({behavior:'smooth'})">
+        Launch OrchiServe
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 id="hero-heading">
+        Agentic AI for End-to-End Customer Service Automation
+      </h1>
+
+      <p id="hero-subheading">
+        OrchiServe CX reads emails, chats, and forms, classifies
+        tickets, calls IBM watsonx Orchestrate to execute workflows,
+        and keeps both customers and agents in sync — automatically.
+      </p>
+
+      <div class="hero-badges">
+        <span class="badge">IBM watsonx Orchestrate</span>
+        <span class="badge">watsonx.ai + NLU</span>
+        <span class="badge">Speech-to-Text • Text-to-Speech</span>
+        <span class="badge">Cloudant Ticket Store</span>
+      </div>
+
+      <div class="hero-buttons">
+        <button class="btn-primary" id="primary-cta"
+          onclick="document.getElementById('demo').scrollIntoView({behavior:'smooth'})">
+          Try the Agentic Flow
+        </button>
+
+        <button class="btn-secondary" id="secondary-cta"
+          onclick="document.getElementById('how-it-works').scrollIntoView({behavior:'smooth'})">
+          View Architecture
+        </button>
+      </div>
+
+      <p class="hero-note">
+        Built for the IBM Agentic AI with watsonx Hackathon – focused on
+        measurable impact: faster resolution, fewer escalations, and
+        happier customers.
+      </p>
+    </div>
+
+    <!-- Right side AI panel (quick ticket mock) -->
+    <div class="ai-panel">
+      <div class="chat-header">
+        <div class="ai-avatar">CX</div>
+        <div>
+          <strong>OrchiServe CX</strong>
+          <div style="font-size: 0.85rem; color: #64748b">
+            Agentic Customer Service Brain · Online
+          </div>
+        </div>
+      </div>
+
+      <div class="chat-messages">
+        <div class="message user">
+          My refund for order #98421 is still not processed.
+        </div>
+
+        <div class="message ai">
+          I’ve detected a <strong>Refund Delay</strong> issue for order
+          <strong>#98421</strong>. Creating a high-priority ticket,
+          assigning it to the <strong>Billing</strong> queue, and
+          notifying your customer via email.
+        </div>
+
+        <div class="ai-tag">
+          🔁 Flow: Ingest → Classify (NLU) → Orchestrate Flow → Update
+          Ticket Store → Notify User
+        </div>
+
+        <div class="typing-indicator">
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+      </div>
+
+      <div class="suggestions">
+        <button class="suggestion-btn">📩 Summarize this email</button>
+        <button class="suggestion-btn">⚡ Auto-create ticket</button>
+        <button class="suggestion-btn">📊 Show ticket status</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features" id="features">
+    <h2>Customer Service Automation, Powered by Agentic AI</h2>
+    <p class="features-subtitle">
+      OrchiServe CX connects IBM watsonx, your ticketing system, and
+      communication channels into one autonomous support layer.
+    </p>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">💬</div>
+        <h3>AI Chat + Triage</h3>
+        <p>
+          Conversational AI (chat, email, voice) that understands
+          intent, extracts entities, and maps queries to the right
+          workflow using NLU + watsonx.ai.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">📩</div>
+        <h3>Auto Ticket Creation</h3>
+        <p>
+          OrchiServe CX auto-detects issues from unstructured messages
+          and creates <strong>clean, structured tickets</strong> with
+          summaries, priority, and tags — no manual typing.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h3>Live Ticket Status & Escalations</h3>
+        <p>
+          Real-time tracking for each ticket: current stage, owner, SLA
+          risk, and next action. Smart escalation rules keep critical
+          cases on top.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🔍</div>
+        <h3>Knowledge & Insights</h3>
+        <p>
+          Auto-generated FAQs, resolution suggestions, and trend
+          analysis directly from historical tickets stored in Cloudant
+          and other data sources.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="how-container">
+      <h2>How OrchiServe CX Works</h2>
+      <p class="how-subtitle">
+        A complete Agentic AI loop: Perception → Reasoning → Action →
+        Feedback.
+      </p>
+
+      <div class="how-grid">
+        <div class="how-card">
+          <div class="step-number">01</div>
+          <h3>Ingest & Understand</h3>
+          <p>
+            Emails, chat messages, and forms are ingested. NLU +
+            watsonx.ai extract intent (refund, outage, upgrade), key
+            entities (order ID, account ID), and urgency.
+          </p>
+          <ul>
+            <li>IBM Natural Language Understanding</li>
+            <li>Speech-to-Text for voice queries</li>
+          </ul>
+        </div>
+
+        <div class="how-card">
+          <div class="step-number">02</div>
+          <h3>Plan & Orchestrate</h3>
+          <p>
+            OrchiServe CX builds a mini plan: create/update ticket,
+            call downstream APIs, notify humans, or escalate. IBM
+            watsonx Orchestrate executes these steps as reusable flows.
+          </p>
+          <ul>
+            <li>Reusable Orchestrate Playbooks</li>
+            <li>Smart routing based on priority & team</li>
+          </ul>
+        </div>
+
+        <div class="how-card">
+          <div class="step-number">03</div>
+          <h3>Act & Learn</h3>
+          <p>
+            Tickets and status are written to Cloudant. Users get live
+            status updates, and the model learns from resolutions to
+            improve future responses.
+          </p>
+          <ul>
+            <li>Cloudant as ticket + logs store</li>
+            <li>Feedback loop for better suggestions</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IBM Tech Stack Section -->
+  <section class="stack-section" id="stack">
+    <h2>IBM watsonx Stack Behind OrchiServe CX</h2>
+    <p class="stack-subtitle">
+      Clear mapping from hackathon requirements to actual components.
+    </p>
+
+    <div class="stack-grid">
+      <div class="stack-card">
+        <h3>🧠 watsonx.ai</h3>
+        <p>
+          Used for summarizing tickets, generating replies, and
+          reasoning over customer history and previous resolutions.
+        </p>
+      </div>
+
+      <div class="stack-card">
+        <h3>🤖 watsonx Orchestrate</h3>
+        <p>
+          Central agent to coordinate flows: ticket creation, CRM
+          updates, Slack/Teams notifications, and escalation logic.
+        </p>
+      </div>
+
+      <div class="stack-card">
+        <h3>🗣 NLU + STT/TTS</h3>
+        <p>
+          Natural Language Understanding for intent/entity detection
+          plus Speech-to-Text and Text-to-Speech for voice channels.
+        </p>
+      </div>
+
+      <div class="stack-card">
+        <h3>🗄 Cloudant</h3>
+        <p>
+          Persistent store for tickets, conversation summaries, and
+          analytics. Acts as a single source of truth for reporting.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive AI Section -->
+  <section class="ai-interactive" id="demo">
+    <div class="ai-interactive-container">
+      <h2>Try the OrchiServe CX Conversation Flow</h2>
+      <p class="ai-interactive-subtitle">
+        This front-end talks to your backend endpoints:
+        <code>/test-text</code> (text) and <code>/process-voice</code> (voice)
+        to trigger the full agentic pipeline.
+      </p>
+
+      <div class="ai-layout">
+        <!-- LEFT: CHAT + CONTROLS -->
+        <div class="chat-interface">
+          <div class="chat-display" id="chat-display">
+            <div class="message ai">
+              <strong>👋 Hey!</strong><br />
+              I’m OrchiServe CX. Type or speak a customer issue and I’ll show how
+              I classify, generate a plan, and act via IBM watsonx Orchestrate.
+            </div>
+
+            <div class="ai-response-card">
+              <h4>💡 Quick Tip</h4>
+              <p>
+                Try: “I was charged twice for my subscription” or
+                “Our production server is down, users can't login.”
+              </p>
+            </div>
+          </div>
+
+          <div class="chat-input-row">
+            <button class="mic-btn" id="mic-btn" type="button" title="Hold to record voice">
+              🎙
+            </button>
+
+            <input type="text" class="chat-input" id="chat-input" placeholder="Type or paste a customer issue here..."
+              aria-label="Chat message input" />
+
+            <button class="send-btn" id="send-btn" type="button">
+              Send
+            </button>
+          </div>
+
+          <div class="suggestions">
+            <button class="suggestion-btn" data-msg="I was charged twice for my last invoice.">
+              🔁 Billing: Duplicate charge
+            </button>
+            <button class="suggestion-btn" data-msg="Our production server is down and users can't login.">
+              🚨 Outage: Production down
+            </button>
+            <button class="suggestion-btn" data-msg="What's the current status of ticket #4219?">
+              📊 Check ticket status
+            </button>
+          </div>
+        </div>
+
+        <!-- RIGHT: TICKET + FLOW -->
+        <div class="ai-side-panel">
+          <!-- Ticket Visualization -->
+          <div class="ticket-panel" id="ticket-panel">
+            <h3>Latest Ticket Snapshot</h3>
+            <p class="ticket-empty" id="ticket-empty">
+              No ticket yet. Send a message or voice query to generate one.
+            </p>
+
+            <div class="ticket-details hidden" id="ticket-details">
+              <div class="ticket-row">
+                <span class="ticket-label">Ticket ID</span>
+                <span class="ticket-value" id="ticket-id">—</span>
+              </div>
+              <div class="ticket-row">
+                <span class="ticket-label">Issue Type</span>
+                <span class="ticket-value" id="ticket-type">—</span>
+              </div>
+              <div class="ticket-row">
+                <span class="ticket-label">Priority</span>
+                <span class="ticket-value" id="ticket-priority">—</span>
+              </div>
+              <div class="ticket-row">
+                <span class="ticket-label">Sentiment</span>
+                <span class="ticket-value" id="ticket-sentiment">—</span>
+              </div>
+              <div class="ticket-row">
+                <span class="ticket-label">Channel</span>
+                <span class="ticket-value" id="ticket-channel">—</span>
+              </div>
+              <div class="ticket-row">
+                <span class="ticket-label">Status</span>
+                <span class="ticket-value" id="ticket-status">—</span>
+              </div>
+              <div class="ticket-row">
+                <span class="ticket-label">Last Updated</span>
+                <span class="ticket-value" id="ticket-updated">—</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Orchestrate Flow Diagram -->
+          <div class="flow-card">
+            <h3>OrchiServe CX Orchestrate Flow</h3>
+            <p class="flow-subtitle">
+              Every message runs through this agentic loop:
+            </p>
+
+            <div class="flow-steps" id="flow-steps">
+              <div class="flow-step" data-step="ingest">
+                <span class="step-badge">1</span>
+                <div>
+                  <div class="step-title">Ingest</div>
+                  <div class="step-desc">Email / chat / voice captured</div>
+                </div>
+              </div>
+
+              <div class="flow-step" data-step="understand">
+                <span class="step-badge">2</span>
+                <div>
+                  <div class="step-title">Understand</div>
+                  <div class="step-desc">
+                    IBM NLU extracts intent, entities, sentiment, emotion
+                  </div>
+                </div>
+              </div>
+
+              <div class="flow-step" data-step="plan">
+                <span class="step-badge">3</span>
+                <div>
+                  <div class="step-title">Plan</div>
+                  <div class="step-desc">
+                    Gemini + watsonx.ai build next actions & reply
+                  </div>
+                </div>
+              </div>
+
+              <div class="flow-step" data-step="act">
+                <span class="step-badge">4</span>
+                <div>
+                  <div class="step-title">Act</div>
+                  <div class="step-desc">
+                    Ticket created/updated, notifications sent, TTS reply
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <p class="flow-footnote">
+              Steps light up for every conversation to show judges the
+              end-to-end flow.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Toast container (add before closing </body>) -->
+  <div id="toast-container"></div>
+
+
+  <!-- Form Section -->
+  <section class="form-section" id="contact">
+    <h2>Talk to the OrchiServe CX Team</h2>
+    <p class="form-subtitle">
+      Want to see a full IBM watsonx + OrchiServe CX demo or discuss
+      extensions for your stack?
+    </p>
+
+    <form class="contact-form" id="contact-form">
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="John Smith" required />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Work Email</label>
+        <input type="email" id="email" name="email" placeholder="john@company.com" required />
+      </div>
+
+      <div class="form-group">
+        <label for="inquiry-type">Inquiry Type</label>
+        <select id="inquiry-type" name="inquiry-type" required>
+          <option value="">Select an option</option>
+          <option value="demo">Request full demo</option>
+          <option value="hackathon">
+            Hackathon judging / Q&amp;A
+          </option>
+          <option value="integration">Integration discussion</option>
+          <option value="partnership">Partnership Opportunity</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Tell us about your use case or question..."
+          required></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">Send Message</button>
+
+      <div class="success-message" id="success-message">
+        ✓ Thank you! Your message has been sent successfully.
+      </div>
+    </form>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials" id="testimonials">
+    <div class="testimonials-container">
+      <h2>Expected Impact</h2>
+      <p class="testimonials-subtitle">
+        Target outcomes you can highlight in your hackathon pitch.
+      </p>
+
+      <div class="testimonial-slider">
+        <div class="testimonial-card">
+          <p class="testimonial-content">
+            "Average first response time reduced by
+            <strong>60–80%</strong> by auto-triaging and auto-replying
+            to common queries."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">CS</div>
+            <div class="author-info">
+              <h4>Customer Support Lead</h4>
+              <p>SaaS Company (Hypothetical)</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-content">
+            "Agents handle more complex cases while OrchiServe CX
+            clears repetitive tickets, boosting
+            <strong>agent productivity</strong> by 30–40%."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">OP</div>
+            <div class="author-info">
+              <h4>Operations Manager</h4>
+              <p>Enterprise Support Team</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-content">
+            "Built natively on IBM watsonx — all flows are explainable
+            and enterprise-ready, not just a chatbot demo."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">AR</div>
+            <div class="author-info">
+              <h4>Architecture Review</h4>
+              <p>Internal Stakeholder</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slider-controls">
+        <div class="slider-arrow">←</div>
+        <div class="slider-arrow">→</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="cta-banner">
+    <div class="cta-content">
+      <h2>Ship a Real Agentic CX System, Not Just a Chatbot</h2>
+      <p>
+        Use OrchiServe CX as the reference implementation to show IBM
+        judges a complete loop: ingest → reason → orchestrate →
+        measure.
+      </p>
+      <button class="cta-big-btn" onclick="document.getElementById('demo').scrollIntoView({behavior:'smooth'})">
+        Run the Demo Flow
+      </button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3 id="company-name">OrchiServe CX</h3>
+        <p style="color: #94a3b8; line-height: 1.6">
+          Agentic customer service automation built on IBM watsonx —
+          from raw customer messages to resolved tickets and insights.
+        </p>
+
+        <div class="social-icons">
+          <div class="social-icon">𝕏</div>
+          <div class="social-icon">in</div>
+          <div class="social-icon">f</div>
+          <div class="social-icon">▶</div>
+        </div>
+      </div>
+
+      <div class="footer-column">
+        <h3>Product</h3>
+        <ul class="footer-links">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#stack">Tech Stack</a></li>
+          <li><a href="#demo">Demo</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Hackathon</h3>
+        <ul class="footer-links">
+          <li><a href="#demo">Live Scenario</a></li>
+          <li><a href="#contact">Connect with Builder</a></li>
+          <li><a href="#testimonials">Impact Metrics</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Support</h3>
+        <ul class="footer-links">
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#privacy">Privacy</a></li>
+          <li><a href="#terms">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>
+        © 2025 OrchiServe CX. Built by Patty using IBM watsonx Agentic
+        AI.
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
